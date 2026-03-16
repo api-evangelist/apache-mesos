@@ -1,0 +1,34 @@
+aid: apache-mesos
+name: Apache Mesos
+description: >-
+  Apache Mesos is a cluster manager that provides efficient resource isolation and sharing across distributed applications or frameworks. It abstracts CPU, memory, storage, and other compute resources away from machines.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Cluster Management
+  - Resource Management
+  - Distributed Systems
+  - Scheduling
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-mesos/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-mesos:apache-mesos-http-api
+    name: Apache Mesos HTTP API
+    description: >-
+      The Mesos HTTP API provides endpoints for framework scheduling, operator management, executor communication, and agent management, with bindings available in Java, Python, C++, and Go.
+    humanURL: https://mesos.apache.org/documentation/latest/
+    tags:
+      - HTTP
+      - Scheduling
+      - Resource Management
+    properties:
+      - type: Documentation
+        url: https://mesos.apache.org/documentation/latest/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
