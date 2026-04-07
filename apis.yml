@@ -8,8 +8,8 @@ access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Cluster Management
-  - Resource Management
   - Distributed Systems
+  - Resource Management
   - Scheduling
 created: '2026-03-16'
 modified: '2026-03-16'
@@ -24,8 +24,8 @@ apis:
     humanURL: https://mesos.apache.org/documentation/latest/
     tags:
       - HTTP
-      - Scheduling
       - Resource Management
+      - Scheduling
     properties:
       - type: Documentation
         url: https://mesos.apache.org/documentation/latest/
