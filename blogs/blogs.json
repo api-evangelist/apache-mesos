@@ -1,0 +1,13 @@
+{
+  "repo": "apache-mesos",
+  "feeds": [
+    {
+      "source": "https://mesos.apache.org/blog/",
+      "feed_url": "https://mesos.apache.org/blog/feed.xml",
+      "saved": 10,
+      "title": "Apache Mesos Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:22:08Z"
+}

@@ -1,0 +1,75 @@
+---
+title: "Apache Mesos 1.9: Agent Draining, Quota Limit and Security Improvements"
+url: "/blog/mesos-1-9-0-released/"
+date: "2019-09-05T00:00:00+00:00"
+author: "Qian Zhang & Gilbert Song"
+feed_url: "https://mesos.apache.org/blog/feed.xml"
+---
+<p>We are excited to announce that Apache Mesos 1.9.0 is now available for <a href="/downloads">download</a>. Please take a look at what&rsquo;s new in this release!</p>
+
+<h1>New Features and Improvements</h1>
+
+<h2>Agent Draining</h2>
+
+<p>Automatic agent draining was added to allow operators to prepare agent nodes for maintenance without requiring schedulers to implement support for the feature. Since the pre-existing maintenance primitives offered by Mesos require that schedulers make changes, some operators have had difficulty using them effectively in clusters containing frameworks which have not done so. When automatic draining is initiated on an agent, all tasks are gracefully killed, and operators can monitor the master&rsquo;s state to detect when draining on the agent is complete.</p>
+
+<p>Agent deactivation and reactivation primitives were also added to the master API, allowing operators to stop and resume offers from particular agents. Used in concert with framework-specific APIs, this new functionality enables operators to perform manual draining of agent nodes in cases where greater control is desired.</p>
+
+<h2>Resource Management</h2>
+
+<p>Prior to Mesos 1.9, the quota related APIs only exposed quota &ldquo;guarantees&rdquo; which ensured a minimum amount of resources would be available to a role. Setting guarantees also set implicit quota limits. In Mesos 1.9.0, quota limits are now exposed directly.</p>
+
+<ul>
+<li><p>Quota guarantees are now deprecated in favor of using only quota limits. Enforcement of quota guarantees required that Mesos holds back enough resources to meet all of the unsatisfied quota guarantees. Since Mesos is moving towards an optimistic offer model (to improve multi-role / multi- scheduler scalability, see MESOS-1607), it will become no longer possible to enforce quota guarantees by holding back resources. In such a model, quota limits are simple to enforce, but quota guarantees would require a complex &ldquo;effective limit&rdquo; propagation model to leave space for unsatisfied guarantees.</p></li>
+<li><p>For these reasons, quota guarantees, while still functional in Mesos 1.9, are now deprecated. A combination of limits and priority based preemption will be simpler in an optimistic offer model.</p></li>
+</ul>
+
+
+<h2>Containerization</h2>
+
+<p>A number of containerization-related improvements have landed in Mesos 1.9.0:</p>
+
+<ul>
+<li><p>The Mesos containerizer now supports configurable IPC namespace and /dev/shm. Container can be configured to have a private IPC namespace and /dev/shm or share them from its parent, and the size of its private /dev/shm is also configurable.</p></li>
+<li><p>A new <code>/containerizer/debug</code> HTTP endpoint has been added. This endpoint exposes debug information for the Mesos containerizer. At the moment, it returns a list of pending operations related to isolators and launchers.</p></li>
+<li><p>A new Linux NNP (No New Privs) isolator has been added to the Mesos Containerizer. The isolator allows configuration of the <a href="https://www.kernel.org/doc/Documentation/prctl/no_new_privs.txt">no_new_privs</a> flag for launched containers. The <code>no_new_privs</code> flag disables the ability of container tasks to acquire additional privileges by means of executing a child process e.g. through invocation of <code>setuid</code> or <code>setgid</code> programs. The flag is configurable on the agent and provides additional depth of security for containerized processes.</p></li>
+<li><p>A new <code>--docker_ignore_runtime</code> flag has been added. This causes the agent to ignore any runtime configuration present in Docker images.</p></li>
+<li><p>The Mesos containerizer now includes ephemeral overlayfs storage in the task disk quota as well as sandbox storage.</p></li>
+</ul>
+
+
+<h2>Improved Security for TLS Connections</h2>
+
+<p>Since Mesos 0.23, Mesos had support for using TLS [1] to encrypt the communication to and from Mesos components - the same protocol that secures <code>https</code>, <code>smtps</code>, and many others. Roughly speaking, every time a TLS client connects to a TLS server, that server will present a certificate signed by a trusted certificate authority which is used to verify the identity of the server.</p>
+
+<p>In Mesos, this behaviour is controlled by the environment variables <code>LIBPROCESS_SSL_VERIFY_CERT</code> and <code>LIBPROCESS_SSL_REQUIRE_CERT</code>. The former would do the cryptographic verification <strong>if</strong> a certificate was supplied, and the latter would reject all connections where no certificate was presented. This may sound straightforward, but this behaviour has proven challenging for Mesos operators, with many leaving TLS verification disabled in practice. The reason for that is that Mesos components are acting as both TLS client and server at the same time.</p>
+
+<p>Enabling server certificate validation in this scenario had the effect of requiring <strong>all</strong> incoming connections to present valid client certificates. This put an additional burden on operators to build infrastructure to distribute valid client certificates to all users of Mesos endpoints.</p>
+
+<p>With Mesos 1.9, we updated the semantics of both flags to be more aligned with the needs of Mesos operators:</p>
+
+<ul>
+<li><p><code>LIBPROCESS_SSL_VERIFY_CERT</code> now only applies to <em>server certificates</em>, which are always required for TLS connections. If it is set to true, the server certificate is verified for all outgoing connections.</p></li>
+<li><p><code>LIBPROCESS_SSL_REQUIRE_CERT</code> now only applies to <em>client certificates</em>: If it is set to true, all incoming connections must present a valid client certificate.</p></li>
+</ul>
+
+
+<p>By switching to the OpenSSL-provided API for hostname validation [2], we are able to improve security and make the behaviour more uniform across different platforms. We were also able to eliminate reverse DNS lookups while establishing a connection which improves reliability and performance.</p>
+
+<p>[1] https://en.wikipedia.org/wiki/Transport_Layer_Security</p>
+
+<p>[2] http://mesos.apache.org/documentation/latest/ssl/#libprocess_ssl_hostname_validation_scheme-legacy-openssl-default</p>
+
+<h1>Upgrade</h1>
+
+<p>Upgrades from Mesos 1.8.0 to Mesos 1.9.0 should be straightforward. Please refer to the <a href="http://mesos.apache.org/documentation/latest/upgrades/">upgrade guide</a> for detailed information on upgrading to Mesos 1.9.0.</p>
+
+<h1>Community</h1>
+
+<p>Inspired by the work that went into this release? Want to get involved? Have feedback? We&rsquo;d love to hear from you! Join a <a href="http://mesos.apache.org/community/#working-groups">working group</a> or start a conversation in the <a href="http://mesos.apache.org/community/">community</a>!</p>
+
+<h1>Thank you!</h1>
+
+<p>Thanks to the 28 contributors who made Mesos 1.9.0 possible:</p>
+
+<p>Alexander Rukletsov, Andrei Budnik, Andrei Sekretenko, Armand Grillet, Bartosz Galek, Benjamin Bannier, Benjamin Mahler, Benno Evers, Bilal Amarni, Chun-Hung Hsiao, Gastón Kleiman, Gilbert Song, Greg Mann, Hans Beck, Jacob Janco, James Peach, James Wright, Jan Schlicht, Joseph Wu, Meng Zhu, Pavel Kirillov, Qian Zhang, Stéphane Cottin, Till Toenshoff, Tomasz Janiszewski, Vinod Kone, Zhitao Li, Fei Long</p>

@@ -1,0 +1,56 @@
+---
+title: "Apache Mesos 1.4.3 Released"
+url: "/blog/mesos-1-4-3-released/"
+date: "2019-02-26T00:00:00+00:00"
+author: "Meng Zhu"
+feed_url: "https://mesos.apache.org/blog/feed.xml"
+---
+<p>The latest Mesos 1.4.x release, 1.4.3, is now available for <a href="http://mesos.apache.org/downloads">download</a>. This release includes important bug fixes and improvements on top of 1.4.2. It is recommended to use this version if you are considering using Mesos 1.4. More specifically, this release includes the following notable fixes:</p>
+
+<ul>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-8128">MESOS-8128</a> - Make os::pipe file descriptors O_CLOEXEC.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-8568">MESOS-8568</a> - Command checks should always call <code>WAIT_NESTED_CONTAINER</code> before <code>REMOVE_NESTED_CONTAINER</code></li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-8620">MESOS-8620</a> - Containers stuck in FETCHING possibly due to unresponsive server.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-8917">MESOS-8917</a> - Agent leaking file descriptors into forked processes.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-8921">MESOS-8921</a> - Autotools don&rsquo;t work with newer OpenJDK versions</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9144">MESOS-9144</a> - Master authentication handling leads to request amplification.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9145">MESOS-9145</a> - Master has a fragile burned-in 5s authentication timeout.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9146">MESOS-9146</a> - Agent has a fragile burn-in 5s authentication timeout.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9147">MESOS-9147</a> - Agent and scheduler driver authentication retry backoff time could overflow.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9151">MESOS-9151</a> - Container stuck at ISOLATING due to FD leak.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9170">MESOS-9170</a> - Zookeeper doesn&rsquo;t compile with newer gcc due to format error.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9196">MESOS-9196</a> - Removing rootfs mounts may fail with EBUSY.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9221">MESOS-9221</a> - If some image layers are large, the image pulling may stuck due to the authorized token expired.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9231">MESOS-9231</a> - <code>docker inspect</code> may return an unexpected result to Docker executor due to a race condition.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9279">MESOS-9279</a> - Docker Containerizer &lsquo;usage&rsquo; call might be expensive if mount table is big.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9283">MESOS-9283</a> - Docker containerizer actor can get backlogged with large number of containers.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9304">MESOS-9304</a> - Test <code>CGROUPS_ROOT_PidNamespaceForward</code> and <code>CGROUPS_ROOT_PidNamespaceBackward</code> fails on 1.4.x.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9334">MESOS-9334</a> - Container stuck at ISOLATING state due to libevent poll never returns.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9419">MESOS-9419</a> - Executor to framework message crashes master if framework has not re-registered.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9480">MESOS-9480</a> - Master may skip processing authorization results for <code>LAUNCH_GROUP</code>.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9492">MESOS-9492</a> - Persist CNI working directory across reboot.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9501">MESOS-9501</a> - Mesos executor fails to terminate and gets stuck after agent host reboot.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9502">MESOS-9502</a> - IOswitchboard cleanup could get stuck due to FD leak from a race.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9518">MESOS-9518</a> - CNI_NETNS should not be set for orphan containers that do not have network namespace.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9532">MESOS-9532</a> - ResourceOffersTest.ResourceOfferWithMultipleSlaves is flaky.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9533">MESOS-9533</a> - CniIsolatorTest.ROOT_CleanupAfterReboot is flaky.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9510">MESOS-9510</a> - Disallowed nan, inf and so on in <code>Value::Scalar</code>.</li>
+<li><a href="https://issues.apache.org/jira/browse/MESOS-9516">MESOS-9516</a> - Extend <code>min_allocatable_resources</code> flag to cover non-scalar resources.</li>
+</ul>
+
+
+<p>Full release notes are available in the release <a href="https://gitbox.apache.org/repos/asf?p=mesos.git;a=blob_plain;f=CHANGELOG;hb=1.4.3">CHANGELOG</a></p>
+
+<h3>Upgrades</h3>
+
+<p>Rolling upgrades from a Mesos 1.4.2 cluster to Mesos 1.4.3 are straightforward. Please refer to the <a href="http://mesos.apache.org/documentation/latest/upgrades/">upgrade guide</a> for detailed information on upgrading to Mesos 1.4.2 from 1.0.x, 1.2.x, or 1.3.x.</p>
+
+<h3>Try it out</h3>
+
+<p>Please try out this release and let us know what you think. If you run into any issues, let us know on the <a href="https://mesos.apache.org/community">user mailing list and/or Slack/IRC</a>.</p>
+
+<h3>Thanks!</h3>
+
+<p>Thanks to the 18 contributors who made 1.4.3 possible:</p>
+
+<p>Alexander Rukletsov, Andrei Budnik, Andrew Schwartzmeyer, Benjamin Bannier, Benjamin Mahler, Benno Evers, Chun-Hung Hsiao, Deepak Goel, Gastón Kleiman, Gilbert Song, Greg Mann, James Peach, Jie Yu, Kapil Arya, Meng Zhu, Michael Park, Qian Zhang, Radhika Jandhyala</p>
