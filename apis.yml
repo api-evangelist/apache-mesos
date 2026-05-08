@@ -33,6 +33,8 @@ apis:
         url: https://mesos.apache.org/documentation/latest/operator-http-api/
       - type: GitHubRepository
         url: https://github.com/apache/mesos
+      - url: openapi/apache-mesos-openapi.yml
+        type: OpenAPI
   - aid: apache-mesos:mesos-scheduler-http-api
     name: Apache Mesos Scheduler HTTP API
     description: >-
