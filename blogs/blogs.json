@@ -2,10 +2,11 @@
   "repo": "apache-mesos",
   "feeds": [
     {
-      "source": "https://mesos.apache.org/blog/feed",
-      "feed_url": "https://mesos.apache.org/blog/feed",
+      "source": "https://mesos.apache.org/blog/",
+      "feed_url": "https://mesos.apache.org/blog/",
+      "title": "",
       "saved": 0,
-      "error": "no_feed_no_posts"
+      "method": "none"
     },
     {
       "source": "https://mesos.apache.org/documentation/latest/",
@@ -16,5 +17,5 @@
     }
   ],
   "post_count": 59,
-  "fetched": "2026-06-01T23:35:02Z"
+  "fetched": "2026-06-14T20:42:17Z"
 }

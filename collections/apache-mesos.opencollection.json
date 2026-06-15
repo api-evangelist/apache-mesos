@@ -1,0 +1,25 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Mesos Operator HTTP API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Operator HTTP API call",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "http://localhost:5050/api/v1",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Submit an operator API call. The request body must be a JSON or Protobuf-encoded `Call` object. The `type` field determines the action, for example GET_HEALTH, GET_FLAGS, GET_VERSION, GET_METRICS, GET_LOGGING_LEVEL, SET_LOGGING_LEVEL, LIST_FILES, READ_FILE, GET_STATE, GET_AGENTS, GET_FRAMEWORKS, GET_EXECUTORS, GET_TASKS, GET_ROLES, GET_OPERATIONS, GET_WEIGHTS, UPDATE_WEIGHTS, GET_MASTER, RESERVE_RESOURCES, UNRESERVE_RESOURCES, CREATE_VOLUMES, DESTROY_VOLUMES, GROW_VOLUME, SHRINK_VOLUME, GET_MAIN"
+    }
+  ],
+  "bundled": true
+}
