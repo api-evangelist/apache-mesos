@@ -3,19 +3,12 @@
   "feeds": [
     {
       "source": "https://mesos.apache.org/blog/",
-      "feed_url": "https://mesos.apache.org/blog/",
-      "title": "",
+      "feed_url": "",
       "saved": 0,
-      "method": "none"
-    },
-    {
-      "source": "https://mesos.apache.org/documentation/latest/",
-      "feed_url": "https://mesos.apache.org/documentation/latest/",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "method": "agent-scrape"
     }
   ],
   "post_count": 59,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:24:09Z",
+  "agent_pulled": "2026-06-27"
 }
