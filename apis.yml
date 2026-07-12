@@ -57,6 +57,10 @@ apis:
       - type: GitHubRepository
         url: https://github.com/apache/mesos
 common:
+  - type: VulnerabilityDisclosure
+    url: security/apache-mesos-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/apache-mesos-domain-security.yml
   - type: Portal
     url: https://mesos.apache.org/
   - type: GitHubOrganization
