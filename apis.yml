@@ -57,6 +57,8 @@ apis:
       - type: GitHubRepository
         url: https://github.com/apache/mesos
 common:
+  - type: AgenticAccess
+    url: agentic-access/apache-mesos-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/apache-mesos-vulnerability-disclosure.yml
   - type: DomainSecurity
