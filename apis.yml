@@ -6,9 +6,21 @@ description: >-
   from machines, enabling fault-tolerant and elastic distributed systems. Mesos exposed comprehensive HTTP APIs for
   schedulers, operators, executors, and agents.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-mesos.png
 tags:
   - Cluster Management
   - Distributed Systems
@@ -20,42 +32,38 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-mesos/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: apache-mesos:mesos-operator-http-api
-    name: Apache Mesos Operator HTTP API
-    description: >-
-      The Mesos Operator HTTP API provides a POST-based API at /api/v1 on both master and agent nodes for cluster
-      administration including health checks, state queries, resource reservation, maintenance scheduling, quota
-      management, and agent lifecycle management. Supports JSON and Protobuf encoding.
-    humanURL: https://mesos.apache.org/documentation/latest/operator-http-api/
-    tags:
-      - Cluster Management
-      - HTTP API
-      - Operations
-      - Resource Management
-    properties:
-      - type: Documentation
-        url: https://mesos.apache.org/documentation/latest/operator-http-api/
-      - type: GitHubRepository
-        url: https://github.com/apache/mesos
-      - url: openapi/apache-mesos-openapi.yml
-        type: OpenAPI
-  - aid: apache-mesos:mesos-scheduler-http-api
-    name: Apache Mesos Scheduler HTTP API
-    description: >-
-      The Mesos Scheduler HTTP API at /api/v1/scheduler enables framework schedulers to subscribe to resource offers,
-      launch tasks, kill tasks, reconcile status, and manage framework lifecycle over a persistent HTTP connection with
-      RecordIO-encoded streaming responses.
-    humanURL: https://mesos.apache.org/documentation/latest/scheduler-http-api/
-    tags:
-      - Framework
-      - HTTP API
-      - Scheduling
-      - Tasks
-    properties:
-      - type: Documentation
-        url: https://mesos.apache.org/documentation/latest/scheduler-http-api/
-      - type: GitHubRepository
-        url: https://github.com/apache/mesos
+- aid: apache-mesos:mesos-scheduler-http-api
+  name: Apache Mesos Scheduler HTTP API
+  description: >-
+    The Mesos Scheduler HTTP API at /api/v1/scheduler enables framework schedulers to subscribe to resource
+    offers, launch tasks, kill tasks, reconcile status, and manage framework lifecycle over a persistent
+    HTTP connection with RecordIO-encoded streaming responses.
+  humanURL: https://mesos.apache.org/documentation/latest/scheduler-http-api/
+  tags:
+  - Framework
+  - HTTP API
+  - Scheduling
+  - Tasks
+  properties:
+  - type: Documentation
+    url: https://mesos.apache.org/documentation/latest/scheduler-http-api/
+  - type: GitHubRepository
+    url: https://github.com/apache/mesos
+- aid: apache-mesos:apache-mesos-apache-mesos-operator-http-api-api
+  name: Apache Mesos Apache Mesos Operator HTTP API API
+  description: >-
+    The Apache Mesos Operator HTTP API API from Apache Mesos — 1 operation(s) for apache mesos operator
+    http api.
+  humanURL: https://mesos.apache.org/documentation/latest/operator-http-api/
+  tags:
+  - Apache Mesos Operator HTTP API
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-mesos-apache-mesos-operator-http-api-api-openapi.yml
+  - type: Documentation
+    url: https://mesos.apache.org/documentation/latest/operator-http-api/
+  - type: GitHubRepository
+    url: https://github.com/apache/mesos
 common:
   - type: AgenticAccess
     url: agentic-access/apache-mesos-agentic-access.yml
