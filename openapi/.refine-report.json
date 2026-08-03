@@ -1,0 +1,14 @@
+{
+  "provider": "apache-mesos",
+  "sources": [
+    "apache-mesos-apache-mesos-operator-http-api-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-mesos-apache-mesos-operator-http-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
