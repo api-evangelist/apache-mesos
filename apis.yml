@@ -65,6 +65,13 @@ apis:
   - type: GitHubRepository
     url: https://github.com/apache/mesos
 common:
+  - type: CodeOfConduct
+    url: https://github.com/apache/.github/blob/main/.github/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/apache/mesos/blob/master/CONTRIBUTING.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/apache/mesos/blob/master/LICENSE
   - type: AgenticAccess
     url: agentic-access/apache-mesos-agentic-access.yml
   - type: VulnerabilityDisclosure
