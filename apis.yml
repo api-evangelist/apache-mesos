@@ -30,7 +30,7 @@ tags:
 created: '2026-03-16'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-mesos/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: apache-mesos:mesos-scheduler-http-api
   name: Apache Mesos Scheduler HTTP API
