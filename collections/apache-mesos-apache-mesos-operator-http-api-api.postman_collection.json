@@ -1,0 +1,201 @@
+{
+  "item": [
+    {
+      "id": "627845bc-e003-409c-b7b2-ca33ac19f85e",
+      "name": "Apache Mesos Operator HTTP API",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "792205ae-cc01-4004-8f20-19ade0c674e8",
+          "name": "Operator HTTP API call",
+          "request": {
+            "name": "Operator HTTP API call",
+            "description": {
+              "content": "Submit an operator API call. The request body must be a JSON or Protobuf-encoded `Call` object. The `type` field determines the action, for example GET_HEALTH, GET_FLAGS, GET_VERSION, GET_METRICS, GET_LOGGING_LEVEL, SET_LOGGING_LEVEL, LIST_FILES, READ_FILE, GET_STATE, GET_AGENTS, GET_FRAMEWORKS, GET_EXECUTORS, GET_TASKS, GET_ROLES, GET_OPERATIONS, GET_WEIGHTS, UPDATE_WEIGHTS, GET_MASTER, RESERVE_RESOURCES, UNRESERVE_RESOURCES, CREATE_VOLUMES, DESTROY_VOLUMES, GROW_VOLUME, SHRINK_VOLUME, GET_MAINTENANCE_STATUS, GET_MAINTENANCE_SCHEDULE, UPDATE_MAINTENANCE_SCHEDULE, START_MAINTENANCE, STOP_MAINTENANCE, GET_QUOTA, UPDATE_QUOTA, MARK_AGENT_GONE, DRAIN_AGENT, DEACTIVATE_AGENT, REACTIVATE_AGENT, SUBSCRIBE, GET_CONTAINERS, LAUNCH_NESTED_CONTAINER, and WAIT_NESTED_CONTAINER.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "23b2c670-3b49-4658-b5a2-c6e13a3ee4cc",
+              "name": "Successful call response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4fc3d021-e326-40d6-b79b-497157823c62",
+              "name": "Accepted (no response body)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "94451fb7-a5cb-4bfc-a083-3b7df24d579d",
+              "name": "Malformed call",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:5050",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c27738d6-5109-446d-9c66-50900af6d778",
+    "name": "Apache Mesos Operator HTTP Apache Mesos Operator HTTP API API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Minimal OpenAPI for the Apache Mesos Operator HTTP API. All operations are POST requests to /api/v1 with a JSON body whose `type` field selects the operation (e.g. GET_HEALTH, GET_STATE, RESERVE_RESOURCES).",
+      "type": "text/plain"
+    }
+  }
+}
