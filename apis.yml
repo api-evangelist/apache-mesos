@@ -43,6 +43,11 @@ apis:
   - Framework
   - HTTP API
   - Scheduling
+  - Task
+  tags_raw:
+  - Framework
+  - HTTP API
+  - Scheduling
   - Tasks
   properties:
   - type: Documentation
