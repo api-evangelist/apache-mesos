@@ -1,7 +1,7 @@
 {
   "provider": "apache-mesos",
   "sources": [
-    "apache-mesos-apache-mesos-operator-http-api-api-openapi.yml"
+    "_ae-authored/apache-mesos-openapi.yml"
   ],
   "outputs": [
     "apache-mesos-apache-mesos-operator-http-api-api-openapi.yml"
@@ -9,6 +9,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-mesos-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apache-mesos-openapi.yml: tagged paths POST /api/v1 -> Apache Mesos Operator HTTP API",
+    "apache-mesos-openapi.yml: declared missing tag: Apache Mesos Operator HTTP API",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "apache-mesos-apache-mesos-operator-http-api-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

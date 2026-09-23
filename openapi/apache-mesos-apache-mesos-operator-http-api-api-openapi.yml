@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Apache Mesos Operator HTTP Apache Mesos Operator HTTP API API
+  title: Apache Mesos Operator HTTP API
   version: '1.0'
   description: Minimal OpenAPI for the Apache Mesos Operator HTTP API. All operations are POST requests to /api/v1 with a JSON body whose `type` field selects the operation (e.g. GET_HEALTH, GET_STATE, RESERVE_RESOURCES).
 servers:
@@ -44,5 +44,7 @@ paths:
           description: Malformed call
       tags:
       - Apache Mesos Operator HTTP API
+      operationId: postApiV1
+      x-operation-id-source: derived
 x-generated-from: https://mesos.apache.org/documentation/latest/operator-http-api/
 x-generated-by: claude-crawl-2026-05-08
