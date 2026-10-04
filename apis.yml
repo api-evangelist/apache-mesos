@@ -81,6 +81,9 @@ apis:
   - type: GitHubRepository
     url: https://github.com/apache/mesos
 common:
+- type: CapabilityMap
+  url: capabilities/apache-mesos-capability-edges.yml
+  name: Apache Mesos Business Capability Map
 - type: Website
   url: https://www.apache.org/
 - type: CodeOfConduct
