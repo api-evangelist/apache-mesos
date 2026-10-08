@@ -81,6 +81,12 @@ apis:
   - type: GitHubRepository
     url: https://github.com/apache/mesos
 common:
+- type: Plans
+  url: plans/apache-mesos-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/apache-mesos-rate-limits.yml
+- type: FinOps
+  url: finops/apache-mesos-finops.yml
 - type: CapabilityMap
   url: capabilities/apache-mesos-capability-edges.yml
   name: Apache Mesos Business Capability Map
