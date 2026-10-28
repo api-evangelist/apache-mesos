@@ -1,4 +1,4 @@
-# Apache Mesos (apache-mesos)
+# Apache Mesos
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,83 +66,118 @@
 
 Apache Mesos is a retired cluster manager (now in the Apache Attic) that provided efficient resource isolation and sharing across distributed applications or frameworks. It abstracted CPU, memory, storage, and other compute resources from machines, enabling fault-tolerant and elastic distributed systems. Mesos exposed comprehensive HTTP APIs for schedulers, operators, executors, and agents.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/apache-mesos/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-mesos/refs/heads/main/apis.yml)
+**Areas:** Cluster Management · Distributed Systems · Resource Management · Scheduling · Retired
 
-## Scope
+## Apache Mesos on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Apache Mesos is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-mesos/](https://apis.io/providers/apache-mesos/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Cluster Management
-- Distributed Systems
-- Resource Management
-- Scheduling
-- Retired
+- [Apache Mesos Scheduler HTTP API](https://apis.io/apis/apache-mesos/mesos-scheduler-http-api/) — The Mesos Scheduler HTTP API at /api/v1/scheduler enables framework schedulers to subscribe to resource offers, launch tasks, kill tasks, reconcile status,…
+- [Apache Mesos Apache Mesos Operator HTTP API](https://apis.io/apis/apache-mesos/apache-mesos-apache-mesos-operator-http-api-api/) — The Apache Mesos Operator HTTP API API from Apache Mesos — 1 operation(s) for apache mesos operator http api.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Apache Mesos Operator HTTP API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Mesos Operator HTTP API provides a POST-based API at /api/v1 on both master and agent nodes for cluster administration including health checks, state queries, resource reservation, maintenance scheduling, quota management, and agent lifecycle management. Supports JSON and Protobuf encoding.
+- [Apache Mesos Agentic Access](https://apis.io/agentic-access/apache-mesos/apache-mesos-agentic-access/)
 
-- **Human URL:** [https://mesos.apache.org/documentation/latest/operator-http-api/](https://mesos.apache.org/documentation/latest/operator-http-api/)
+#### Collections (2)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Cluster Management
-- HTTP API
-- Operations
-- Resource Management
+- [Apache Mesos Operator HTTP API](https://apis.io/collections/apache-mesos/open-apache-mesos/)
+- [Apache Mesos Operator HTTP Apache Mesos Operator HTTP API API](https://apis.io/collections/apache-mesos/open-apache-mesos-apache-mesos-operator-http-api-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://mesos.apache.org/documentation/latest/operator-http-api/)
-- [GitHub Repository](https://github.com/apache/mesos)
-- [OpenAPI](openapi/apache-mesos-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/apache-mesos.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/apache-mesos.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Apache Mesos Scheduler HTTP API
+- [Apache Mesos Domain Security](https://apis.io/security/apache-mesos/apache-mesos-domain-security/)
+- [Apache Mesos Vulnerability Disclosure](https://apis.io/security/apache-mesos/apache-mesos-vulnerability-disclosure/)
 
-The Mesos Scheduler HTTP API at /api/v1/scheduler enables framework schedulers to subscribe to resource offers, launch tasks, kill tasks, reconcile status, and manage framework lifecycle over a persistent HTTP connection with RecordIO-encoded streaming responses.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://mesos.apache.org/documentation/latest/scheduler-http-api/](https://mesos.apache.org/documentation/latest/scheduler-http-api/)
+Published plans, tiers and prices.
 
-#### Tags
+- [Apache Mesos Plans Pricing](https://apis.io/plans/apache-mesos/apache-mesos-plans-pricing/)
 
-- Framework
-- HTTP API
-- Scheduling
-- Tasks
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://mesos.apache.org/documentation/latest/scheduler-http-api/)
-- [GitHub Repository](https://github.com/apache/mesos)
-- [Postman Collection](collections/apache-mesos.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/apache-mesos.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Apache Mesos Rate Limits](https://apis.io/rate-limits/apache-mesos/apache-mesos-rate-limits/)
 
-## Common Properties
+#### FinOps (1)
 
-- [Portal](https://mesos.apache.org/)
-- [GitHub Organization](https://github.com/apache)
-- [GitHub Repository](https://github.com/apache/mesos)
+What the API costs to run, by operation.
+
+- [Apache Mesos Finops](https://apis.io/finops/apache-mesos/apache-mesos-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://mesos.apache.org/documentation/latest/)
 - [Blog](https://mesos.apache.org/blog/)
-- [Terms of Service](https://www.apache.org/licenses/LICENSE-2.0)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
+- [Terms of service](https://www.apache.org/licenses/LICENSE-2.0)
+- [GitHub](https://github.com/apache)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Kin Score 25.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 39.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 18.4 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-mesos/](https://apis.io/providers/apache-mesos/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Mesos: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-mesos/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
